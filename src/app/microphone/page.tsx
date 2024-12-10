@@ -1,20 +1,19 @@
 "use client"
 
 import { useEffect, useState, useRef } from "react";
-import { getMicrophoneInput } from "@/engine/input/microphone";
-
 declare global {
     interface Window {
         webkitSpeechRecognition: any;
     }
 }
 
-export default function audio() {
+export default function Audio() {
 
     const [isRecording, setIsRecording] = useState(false);
     const [recordingComplete, setRecordingComplete] = useState(false);
     const [transcript, setTranscript] = useState("");
     const everything: string[] = []
+
     // Reference to store the SpeechRecognition instance
     const recognitionRef = useRef<any>(null);
 
